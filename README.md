@@ -10,16 +10,13 @@ You will need to look up the Python documentation to find out how to set the tim
 
 Specifically, your client program should :
 
-- [ ] send the ping message using UDP (Note: Unlike TCP, you do not need to establish a connection first, since UDP is a connectionless protocol.)
+1. send the ping message using UDP (Note: Unlike TCP, you do not need to establish a connection first, since UDP is a connectionless protocol.)
   
-
-- [ ] print the response message from server, if any
+2. print the response message from server, if any
   
-
-- [ ]  calculate and print the round trip time (RTT), in seconds, of each packet, if server responses 
+3. calculate and print the round trip time (RTT), in seconds, of each packet, if server responses
   
-
-- [ ] otherwise, print “Request timed out”
+4. otherwise, print “Request timed out”
   
   
 
