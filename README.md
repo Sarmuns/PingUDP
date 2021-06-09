@@ -1,6 +1,7 @@
-<div style="bold">
-You need to implement the following client program.
-</div>
+- Livro Kurose -
+
+
+**You need to implement the following client program.**
 
 
 The client should send 10 pings to the server. Because UDP is an unreliable protocol, a packet sent from the client to the server may be lost in the network, or vice versa. For this reason, the client cannot wait indefinitely for a reply to a ping message. You should get the client wait up to one second for a reply; if no reply is received within one second, your client program should assume that the packet was lost during transmission across the network. 
