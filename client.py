@@ -9,7 +9,7 @@ for pings in range(10):
     client_msg = f'ping {pings+1}' # mensagem que o client vai enviar para o server através de udp
     bytesToSend = str.encode(client_msg) # converte a string para bytes (coisa de python)
 
-    addr = ("189.105.165.52", 12000)
+    addr = ("127.0.0.1", 12000)
     bufferSize = 1024
 
     start = time.time() # registra o momento antes de enviar o ping
