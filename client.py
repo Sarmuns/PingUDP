@@ -1,26 +1,25 @@
 from socket import *
 import time
 
-serverAddressPort   = ("127.0.0.1", 12000)
-bufferSize          = 1024
+for pings in range(10):
+    # configura o socket para UDP e para ter um timeout de 1s
+    udp_client_socket = socket(AF_INET, SOCK_DGRAM)
+    udp_client_socket.settimeout(1)
 
-# Create a UDP socket at client side
-UDPClientSocket = socket(AF_INET, SOCK_DGRAM)
-UDPClientSocket.settimeout(1)
+    client_msg = f'ping {pings+1}' # mensagem que o client vai enviar para o server através de udp
+    bytesToSend = str.encode(client_msg) # converte a string para bytes (coisa de python)
 
-for n in range(10):
-    msgFromClient = f'ping {n+1}'
-    bytesToSend = str.encode(msgFromClient)
+    addr = ("189.105.165.52", 12000)
+    bufferSize = 1024
 
+    start = time.time() # registra o momento antes de enviar o ping
+    udp_client_socket.sendto(bytesToSend, addr) # efetivamente excuta o ping
     try:
-        t1 = time.time()
-        UDPClientSocket.sendto(bytesToSend, serverAddressPort)
-        response, adress = UDPClientSocket.recvfrom(bufferSize)
-        t2 = time.time()
-        tim = str(t2-t1)
-        print(response.decode("utf-8"), "RTT:" + tim)
+        data, adress = udp_client_socket.recvfrom(bufferSize)
+        end = time.time() # registra o momento após receber a resposta do ping
+        elapsed = end - start
+
+        print(f'ping_n: {pings} | data: {data.decode("utf-8")} | RTT: {elapsed}') # apresenta o resultado de um ping
 
     except:
-        print("Timeout raised and caught.")
-
-      
+        print('REQUEST TIMED OUT')
