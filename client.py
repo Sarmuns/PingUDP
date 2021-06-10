@@ -1,33 +1,26 @@
-import socket
+from socket import *
+import time
 
- 
-
-msgFromClient       = "Hello UDP Server"
-
-bytesToSend         = str.encode(msgFromClient)
-
-serverAddressPort   = ("127.0.0.1", 20001)
-
+serverAddressPort   = ("127.0.0.1", 12000)
 bufferSize          = 1024
 
- 
-
 # Create a UDP socket at client side
+UDPClientSocket = socket(AF_INET, SOCK_DGRAM)
+UDPClientSocket.settimeout(1)
 
-UDPClientSocket = socket.socket(family=socket.AF_INET, type=socket.SOCK_DGRAM)
+for n in range(10):
+    msgFromClient = f'ping {n+1}'
+    bytesToSend = str.encode(msgFromClient)
 
- 
+    try:
+        t1 = time.time()
+        UDPClientSocket.sendto(bytesToSend, serverAddressPort)
+        response, adress = UDPClientSocket.recvfrom(bufferSize)
+        t2 = time.time()
+        tim = str(t2-t1)
+        print(response.decode("utf-8"), "RTT:" + tim)
 
-# Send to server using created UDP socket
+    except:
+        print("Timeout raised and caught.")
 
-UDPClientSocket.sendto(bytesToSend, serverAddressPort)
-
- 
-
-msgFromServer = UDPClientSocket.recvfrom(bufferSize)
-
- 
-
-msg = "Message from Server {}".format(msgFromServer[0])
-
-print(msg)
+      
