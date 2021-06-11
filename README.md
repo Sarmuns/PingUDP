@@ -25,7 +25,7 @@ During development, you should run the UDPPingerServer.py on your machine, and t
 
 ## Usando o server e o client em máquinas diferentes :sparkles:
 
-Você vai precisar utilizar de ([port forwarding](https://pplware.sapo.pt/tutoriais/networking/sabe-port-forwarding-qual-utilizacao/))
+Você vai precisar utilizar de [port forwarding](https://pplware.sapo.pt/tutoriais/networking/sabe-port-forwarding-qual-utilizacao/)
 
 
 - No código do client trocar o IP e Porta do adress
