@@ -43,4 +43,4 @@ addr = ("127.0.0.1", 12000)
 > 
 > Substituir a porta 12000 pela porta ultilizada no processo de port forwarding
 > 
-> No processo de port forwarding apontar a porta para o IP local de quem está com o **server**
+> No processo de port forwarding apontar a porta para o IP da maquina de quem está com o **server**
