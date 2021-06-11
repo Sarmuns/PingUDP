@@ -1,3 +1,6 @@
+#ALUNO: SAMUEL ALCÂNTARA FONTENELE ROCHA
+#MATRICULA: 1357452
+
 from socket import *
 import time
 
@@ -19,7 +22,7 @@ for pings in range(10):
         end = time.time() # registra o momento após receber a resposta do ping
         elapsed = end - start
 
-        print(f'ping_n: {pings} | data: {data.decode("utf-8")} | RTT: {elapsed}') # apresenta o resultado de um ping
+        print(f'ping_n: {pings + 1} | data: {data.decode("utf-8")} | RTT: {elapsed}') # apresenta o resultado de um ping
 
     except:
         print('REQUEST TIMED OUT')
