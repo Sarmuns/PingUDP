@@ -21,3 +21,25 @@ Specifically, your client program should :
   
 
 During development, you should run the UDPPingerServer.py on your machine, and test your client by sending packets to localhost (or, 127.0.0.1). After you have fully debugged your code, you should see how your application communicates across the network with the ping server and ping client **running on different machines**.
+
+
+Usando o server e o client em máquinas diferentes :sparkles:
+
+Você vai precisar ultilizar de [port forwarding]([Sabe o que é port forwarding e qual a sua utilização?](https://pplware.sapo.pt/tutoriais/networking/sabe-port-forwarding-qual-utilizacao/))
+
+- No código do client trocar o IP e Porta do adress
+  
+
+```python
+addr = ("127.0.0.1", 12000)
+```
+
+> IP: 127.0.0.1 é um IP local
+> 
+> Porta: 12000, só uma porta teoricamente livre
+> 
+> Substituir o IP local pelo IP público de quem está com o **server**
+> 
+> Substituir a porta 12000 pela porta ultilizada no processo de port forwarding
+> 
+> No processo de port forwarding apontar a porta para o IP local de quem está com o **server**
