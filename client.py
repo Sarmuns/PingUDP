@@ -1,6 +1,3 @@
-#ALUNO: SAMUEL ALCÂNTARA FONTENELE ROCHA
-#MATRICULA: 1357452
-
 from socket import *
 import time
 
