@@ -23,7 +23,11 @@ Specifically, your client program should :
 During development, you should run the UDPPingerServer.py on your machine, and test your client by sending packets to localhost (or, 127.0.0.1). After you have fully debugged your code, you should see how your application communicates across the network with the ping server and ping client **running on different machines**.
 
 
-###Usando o server e o client em máquinas diferentes :sparkles: ###
+### Usando o server e o client em máquinas diferentes :sparkles:
+
+Você vai precisar ultilizar de [port forwarding]([Sabe o que é port forwarding e qual a sua utilização?](https://pplware.sapo.pt/tutoriais/networking/sabe-port-forwarding-qual-utilizacao/))
+
+ Usando o server e o client em máquinas diferentes :sparkles:
 
 Você vai precisar ultilizar de [port forwarding]([Sabe o que é port forwarding e qual a sua utilização?](https://pplware.sapo.pt/tutoriais/networking/sabe-port-forwarding-qual-utilizacao/))
 
